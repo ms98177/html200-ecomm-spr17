@@ -49,3 +49,7 @@ var products = [
   }
 ]
 
+function customeremailcapture() {
+  console.log("Thanks for signing up for our mailing list, " + document.customeremail.email.value + "!");
+  event.preventDefault(); // stops form submit
+}
