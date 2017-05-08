@@ -9,9 +9,21 @@ p {
   color: #2d2d2d;
 }
 
-/* TODO: size images manually so this is not necessary */
-img {
-  max-height: 20rem;
+img { max-width: 100%; }
+
+.photo-container {
+  width: 90%;
+  margin: auto;
+  /*border: solid 1px rgba(189, 63, 191, 0.62);*/
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.photo-frame {
+  /* equivalent to 49.5% of total browser width,
+  to make calculating srcset easier for us :) */
+  width: 55%;
 }
 
 /***************** NAV *****************/
