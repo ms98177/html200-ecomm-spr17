@@ -49,6 +49,16 @@ var products = [
   }
 ]
 
+var cart[]
+
+function addToCart() {
+  event.preventDefault();
+
+  var selectedItem = document.addForm.selectedItem.value;
+  cart.push(selectedItem);
+  console.log("added " + selectedItem + " to cart.");
+}
+
 function customeremailcapture() {
   console.log("Thanks for signing up for our mailing list, " + document.customeremail.email.value + "!");
   event.preventDefault(); // stops form submit
