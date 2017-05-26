@@ -9,7 +9,7 @@ p {
   color: #2d2d2d;
 }
 
-img { max-width: 100%; }
+img { max-width: 95%; }
 
 .photo-container {
   width: 90%;
@@ -23,60 +23,142 @@ img { max-width: 100%; }
 .photo-frame {
   /* equivalent to 49.5% of total browser width,
   to make calculating srcset easier for us :) */
-  width: 55%;
+  width: 49.5%;
 }
 
 /***************** NAV *****************/
 nav {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
-
-nav a:hover {
-  text-decoration: underline;
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  top: 0%;
+  z-index: 1;
 }
 
 nav ul {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  background-color: #3b8ede;
+}
 
-  flex-basis: 20%;
-  align-items: flex-start;
-  align-content: flex-start;
+nav ul li {
+  display: inline;
+  padding: 1rem;
+  width: 24.8%;
+  list-style: none;
+}
+
+nav ul a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.5rem;
+
+}
+.navigation {
+  color: #ffffff;
+}
+
+.navigation:hover {
+color: darkred;
+text-decoration: underline;
+text-decoration-style: wavy;
 }
 
 /**************** HERO *****************/
 
 header img {
-  max-height: 6rem;
+  max-height: 10rem;
+  padding: 1rem 1rem 0 1rem;
+  float: left;
+  position: absolute;
+}
+
+header h1 {
+  padding-top: 3.8rem;
+  color: #3b8ede;
+  font-family: 'Anton', sans-serif;
+  margin-top: 4.5rem;
+  margin-left: 6rem;
+  position: relative;
+}
+
+h1 .logo-text {
+  font-size: 2.5rem;
+  color: red;
 }
 
 h1 .logo-w {
-  font-size: 3.5rem;
+  font-size: 3.2rem;
 }
 
-/**************** ITEM CONTAINER ****************/
-
-.container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
+.break {
+  display: table;
 }
 
-.item {
-    flex-shrink: 1;
-    flex-basis: 20%;
-    align-items: flex-start;
-    align-content: flex-start;
-}
+/**************** MEDIA QUERIES ****************/
+
+  @media only screen and (max-width: 40rem) {
+    nav ul{
+      flex-direction: column;
+    }
+    nav ul li{
+      width: 100%;
+    }
+    nav li {
+      text-align: center;
+      list-style: none;
+      border-bottom: 1px solid white;
+    }
+    nav .row {
+      padding: 0;
+    }
+
+    ul li:first-child {
+       order: 4;
+     }
+     ul li:nth-child(1) {
+       order: 1;
+     }
+     ul li:nth-child(2) {
+       order: 2;
+     }
+     ul li:nth-child(3) {
+       order: 3;
+     }
+
+     header img {
+       max-height: 10rem;
+       padding: 1rem 1rem 0 1rem;
+       float: left
+       position: absolute;
+     }
+
+     header h1 {
+       padding-top: 3.8rem;
+       color: #3b8ede;
+       font-family: 'Anton', sans-serif;
+       margin-top: 16rem;
+       margin-left: 6rem;
+       position: relative;
+     }
+
+  }
+
 
 /**************** ASIDE ****************/
 
+select {
+  margin-top: .25rem;
+  border: 1px solid #3D7FCF;
+  color: #3D7FCF;
+  font-size: .75rem;
+}
+
 input[type="submit"] {
+  margin-top: .25rem;
   padding: .25rem;
   background-color: #3D7FCF;
   border: 1px solid #3D7FCF;
@@ -84,6 +166,81 @@ input[type="submit"] {
   font-size: .75rem;
   color: white;
 }
+/*aside mailing list*/
+
+.sign-up {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: .5rem;
+}
+
+.input-aside {
+  width: 100%;
+}
+
+aside {
+  margin-top: 6rem;
+}
+
+/*********** PRODUCTS SECTION ***********/
+
+section {
+  padding: 0 .75rem;
+}
+
+h2 {
+  padding-top: 1.5rem;
+  font-size: 2rem;
+  text-align: center;
+  color: #2d2d2d;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #2d2d2d;
+  padding: 1rem;
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.products {
+  height: 45rem;
+  width: 20rem;
+  padding: 2%;
+  border: 1px solid black;
+  margin: 1%;
+}
+
+.product-image img {
+  max-width: 100%;
+  margin-bottom: 1rem;
+}
+
+.product-info {
+  margin-top: auto;
+}
+
+.products h3 {
+  font-weight: 600;
+  color: #4d4d4d;
+}
+
+.product h5 {
+  color: #4d4d4d;
+}
+
+.price {
+  margin-top: 1rem;
+  color: #360607;
+}
+
 
 /*********** PRODUCTS SECTION ***********/
 
@@ -102,4 +259,93 @@ h3 {
   font-size: 1.2rem;
   text-align: center;
   color: #2d2d2d;
+}
+
+/**************** CART ****************/
+
+.products button {
+border: 1px solid #2b2d42;
+color: #fff;
+background: #3b8ede;
+width: 90%;
+border-radius: 3px;
+padding: 1em 1em 1em 2em;
+margin: 1em 0 0 0;
+cursor: pointer;
+-webkit-transition: background ease-in .25s;
+transition: background ease-in .25s;
+position: absolute;
+bottom: .5rem;
+right: 1rem;
+}
+
+
+.products button:hover {
+background: #fff;
+color: #2B2D42;
+}
+.products button:before {
+font-family: FontAwesome;
+content: '\f07A';
+color: #FFF;
+position: absolute;
+font-size: 1rem;
+margin: 0 -1.5em;
+}
+.products button:hover:before {
+color: #2B2D42;
+}
+
+
+
+/**************** Product Overlay ****************/
+.cart i {
+font-size: 1.5rem;
+}
+.total-text p{
+display: inline;
+color: #0f3b65;
+font-weight: bold;
+}
+
+#cart-items{
+position: absolute;
+right: 4rem;
+top: 10%;
+background-color: #bdd7f0;
+padding: 1rem 2rem 5rem;
+z-index: 999;
+position: fixed;
+}
+
+#list-item li{
+margin: 10px 0px;
+}
+
+.remove{
+background-color: #0f3b65;
+border-color:  #bdd7f0;
+border-radius: 50%;
+color: #fff;
+font-size: 1rem;
+margin: 0px 3px;
+padding: 0px 1px;
+float: right;
+
+}
+
+#list-item li{
+margin: 10px 0px;
+}
+
+
+.product-container{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.products{
+position: relative;
 }

@@ -1,3 +1,54 @@
+$(function(){
+		$("#cart-items").slideUp();
+		$(".cart").on("click", function () {
+		$("#cart-items").slideToggle();
+		});
+
+		$("#items-basket").text("(" + ($("#list-item").children().length) + ")");
+
+
+		$(".add").on("click", function () {
+      $("#cart-items").slideDown();
+     setTimeout(function(){
+        $("#cart-items").slideUp();
+     }, 10000)
+
+			//add items to basket
+			$(this).each(function () {
+				var name = $(this).parent().parent().find(".item-name").text();
+				var remove = "<button class='remove'> X </button>";
+				var cena = "<span class='eachPrice'>" + (parseFloat($(this).parent().find(".price").text())) + "</span>";
+				$("#list-item").append("<li>" + name + "&#09; - &#09; $" + cena  + remove + "</li>");
+
+				//number of items in basket
+				$("#items-basket").text("(" + ($("#list-item").children().length) + ")");
+				$("#items-basket").text();
+
+	        //calculate total price
+	        var totalPrice = 0;
+		        $(".eachPrice").each(function (){
+		          var cenaEach = parseFloat($(this).text());
+		          totalPrice+=cenaEach;
+		        });
+		        $("#total-price").text( "$" + totalPrice );
+			});
+
+			//remove items from basket
+			$(".remove").on("click", function () {
+				$(this).parent().remove();
+
+		        var totalPrice = 0;
+		        $(".eachPrice").each(function (){
+		          var cenaEach = parseFloat($(this).text());
+		          totalPrice+=cenaEach;
+		        });
+		        $("#total-price").text( "$" + totalPrice );
+				$("#items-basket").text("(" + ($("#list-item").children().length) + ")");
+			});
+		});
+})
+
+
 var products = [
   {
     "name": "Reversible Plaid",
@@ -49,17 +100,10 @@ var products = [
   }
 ]
 
-var cart[]
-
-function addToCart() {
-  event.preventDefault();
-
-  var selectedItem = document.addForm.selectedItem.value;
-  cart.push(selectedItem);
-  console.log("added " + selectedItem + " to cart.");
-}
 
 function customeremailcapture() {
-  console.log("Thanks for signing up for our mailing list, " + document.customeremail.email.value + "!");
   event.preventDefault(); // stops form submit
+  var customeremail = document.customeremail.email.value;
+  console.log("Thanks for signing up for our mailing list, " + customeremail + "!");
+
 }
