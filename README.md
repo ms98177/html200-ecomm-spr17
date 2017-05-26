@@ -4,6 +4,8 @@ Testing was performed as the site was coded. Each section was compared to the ex
 HTML objects were placed on the page and css classes were add to the css file. Javascript code was added to the script file. Fontawsome files were added. 
 The css classes were modified to to adjust the html objects to meet desired visual requirements. 
 The css and Javascript code for the cart was modified to correct formating and logic of the cart.
+Finally, the html code is checked by pasting code on The W3C Markup Validation site ( https://validator.w3.org/#validate_by_input ) and thus correcting any errors. 
+The CSS code is checked for errors by pasting the code on CSS Lint ( http://csslint.net/ ) and making corrections for any errors found.
 
 # Description
 
