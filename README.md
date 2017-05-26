@@ -1,3 +1,10 @@
+﻿# Testing
+
+Testing was performed as the site was coded. Each section was compared to the expectations and requirements for that particular functionality. 
+HTML objects were placed on the page and css classes were add to the css file. Javascript code was added to the script file. Fontawsome files were added. 
+The css classes were modified to to adjust the html objects to meet desired visual requirements. 
+The css and Javascript code for the cart was modified to correct formating and logic of the cart.
+
 # Description
 
 This is an assignment to build a responsive ecommerce web page. Nav and product container div will use flexbox. Sidebar/aside is a module that changes layout and location based on window size. Submitting the mailing list signup form results in user feedback on the page. Clicking a product's “add to cart” or “remove from cart” button updates cart count at top. 
